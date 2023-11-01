@@ -1,0 +1,43 @@
+1. a. GoTo
+2. a. Constructor
+3. d. Encapsulation
+4. b. Javac
+5. c. B has access to private members of A
+6. c. Byte
+7. d. Final
+8. c. toUpperCase()
+9. b. char[] ch = new char[5]
+10. c. an int value
+11. a. 0
+12. b. 26
+13. c. public static String var = " world";
+14. c. 8
+15. c. CDEFKLMN
+
+=================
+
+16. SELECT *
+FROM table_name
+ORDER BY point DESC
+
+17. SELECT *
+FROM table_name
+WHERE name LIKE '%Ahmad%'
+
+18. SELECT nik, nama
+FROM table_name
+ORDER BY (total_pembelian_2017 + total_pembelian_2018) DESC
+LIMIT 1 OFFSET 2
+
+19. SELECT SUM(total_pembelian_2017) AS total_purchases
+FROM table_name
+WHERE pulau != 'Jawa'
+
+20. SELECT nik, nama, alamat,
+IF((total_pembelian_2018 - total_pembelian_2017) > 0 , "Profit", "Defisit") AS total_margin
+FROM table_name
+
+21. SELECT nik, nama,
+CONCAT(alamat, ', ', kota, ', ', provisi, ' - ', pulau) AS alamat_lengkap
+FROM table_name
+ORDER BY tgl_regis DESC
