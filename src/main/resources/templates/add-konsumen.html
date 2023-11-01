@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Konsumen - Add</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        .row{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        label {
+
+            display: block;
+            vertical-align: baseline;
+        }
+        span {
+            color: red;
+        }
+        .mr-top {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Add Konsumen <a href="/" class="btn btn-info" role="button">Back</a></h1> <br/>
+        <div>
+            <form action="#" th:action="@{/add-konsumen}" th:object="${konsumen}" method="post">
+                <div class="row mt-5">
+                    <div class="col-md-1">
+                        <label for="nama" class="mr-top">Nama</label>
+                    </div>
+                    <div class="col-md-10">
+                        : <input type="text" th:field="*{nama}" id="nama" placeholder="Nama">
+                        <span th:if="${#fields.hasErrors('nama')}" th:errors="*{nama}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="alamat" class="mr-top">Alamat</label>
+                    </div>
+                    <div class="col-md-10">
+                        : <input type="text" th:field="*{alamat}" id="alamat" placeholder="Alamat">
+                        <span th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="kota" class="mr-top">Kota</label>
+                    </div>
+                    <div class="col-md-10">
+                        : <input type="text" th:field="*{kota}" id="kota" placeholder="Kota">
+                        <span th:if="${#fields.hasErrors('kota')}" th:errors="*{kota}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="provinsi" class="mr-top">Provinsi</label>
+                    </div>
+                    <div class="col-md-10">
+                        : <input type="text" th:field="*{provinsi}" id="provinsi" placeholder="Provinsi">
+                        <span th:if="${#fields.hasErrors('provinsi')}" th:errors="*{provinsi}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="aktif" class="mr-top">Status</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="aktif" >
+                            : <input type="radio" th:field="*{status}" id="aktif" name="status" value="aktif"> Aktif
+                        </label>
+                        <label for="non-aktif" style="margin-top:5px;">
+                            &nbsp;&nbsp;<input type="radio" th:field="*{status}" id="non-aktif" name="status" value="non-aktif"> Non Aktif
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                         &nbsp; <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
